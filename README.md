@@ -49,15 +49,15 @@ begin by clicking the link that creates the GitHub repo.  The whole
 group must work on this single repo. When they do, you will create a
 team-name for your group to work under:
 
-create-team.png
+!(how to create teams)[create-team.png]
 
 Once you've created your team, you should be able to add collaborators to your team:
 
-settings.png
+!(git settings)[settings.png]
 
 Then, when you scroll down on that page, you should be able to add collaborators in this form:
 
-add-collaborators.png
+!(adding collaborators)[add-collaborators.png]
 
 If you experience any difficulty with this, please contact your TA as
 early as possible.  
