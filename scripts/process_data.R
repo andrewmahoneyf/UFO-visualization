@@ -8,7 +8,7 @@ library(mapdata)
 library(maptools)
 
 ## import static files
-system.time(ufo_data <- fread("data/UFOCoords.csv"))
+system.time(ufo_data <- fread("../data/UFOCoords.csv"))
 
 # getting the map
 mapgilbert <- get_map(location = c(lon = mean(ufo_data$lng), lat = mean(ufo_data$lat)), zoom = 4,
