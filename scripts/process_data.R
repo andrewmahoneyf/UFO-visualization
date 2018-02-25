@@ -19,3 +19,6 @@ ggmap(mapgilbert) +
   geom_point(data = ufo_data, aes(x = lng, y = lat, fill = "red", alpha = 0.8), size = 2, shape = 21) +
   guides(fill=FALSE, alpha=FALSE, size=FALSE)
 
+
+shapes <- ufo_data$Shape
+ggplot(ufo_data, aes(Shape)) + geom_bar()
