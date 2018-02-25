@@ -1,0 +1,25 @@
+---
+title: "UFO Sightings"
+output:
+  html_document: default
+css: styles.css
+---
+
+
+```{r init, include=FALSE}
+## load API keys
+source("process_data.R")
+## you may also load necessary libraries and set various options here
+library(dplyr)
+library(data.table)
+library(ggplot2)
+library(knitr)
+knitr::opts_chunk$set(error=TRUE)
+                           # continue compiling on error
+```
+
+##UFO Sightings Map
+
+The first things we were curious about when it came to the UFO sightings data was where they were sighted. To get a better sense of this, we created a map showing each UFO sighting:
+
+`r shape_map`
