@@ -22,4 +22,4 @@ knitr::opts_chunk$set(error=TRUE)
 
 The first things we were curious about when it came to the UFO sightings data was where they were sighted. To get a better sense of this, we created a map showing each UFO sighting:
 
-`r shape_map`
+`r ufo_map`
