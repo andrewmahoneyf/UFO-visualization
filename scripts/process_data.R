@@ -15,10 +15,10 @@ mapgilbert <- get_map(location = c(lon = mean(ufo_data$lng), lat = mean(ufo_data
                       maptype = "satellite", scale = 2)
 
 # plotting the map with some points on it
-ggmap(mapgilbert) +
+ufo_map <- ggmap(mapgilbert) +
   geom_point(data = ufo_data, aes(x = lng, y = lat, fill = "red", alpha = 0.8), size = 2, shape = 21) +
   guides(fill=FALSE, alpha=FALSE, size=FALSE)
 
-
+# plots
 shapes <- ufo_data$Shape
-ggplot(ufo_data, aes(Shape)) + geom_bar()
+ufo_shapes <- ggplot(ufo_data, aes(Shape)) + geom_bar()
