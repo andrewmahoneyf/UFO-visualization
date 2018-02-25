@@ -11,6 +11,6 @@ if(Sys.info()[["user"]] == "jacquesdebar") {
   PROJECTDIR <- file.path("~", "Desktop", "Info-201", "a7-collaboration-PAJJ")
   fileName <- "andrew_results.Rdat"
 } else (Sys.info()[["user"]] == "sanghawk") {
-  PROJECTDIR <- file.path("Users", "sanghawk", "Documents", "Winter '18", "INFO 201", "a7-collaboration","a7-collaboration-andrewmahoneyf")
+  PROJECTDIR <- file.path("Users", "sanghawk", "Documents", "Winter '18", "INFO 201", "a7-collaboration","a7-collaboration-PAJJ")
   fileName <- "sanghawk_results.Rdat"
 } 
