@@ -1,4 +1,6 @@
-
+install.packages(c("data.table", "dplyr", "microbenchmark"))
+library(data.table)
+library(dplyr)
 
 
 if(Sys.info()[["user"]] == "jacquesdebar") {
@@ -10,7 +12,13 @@ if(Sys.info()[["user"]] == "jacquesdebar") {
 } else if(Sys.info()[["user"]] == "andrewmahoney-fernandes") {
   PROJECTDIR <- file.path("~", "Desktop", "Info-201", "a7-collaboration-PAJJ")
   fileName <- "andrew_results.Rdat"
-} else (Sys.info()[["user"]] == "sanghawk") {
-  PROJECTDIR <- file.path("Users", "sanghawk", "Documents", "Winter '18", "INFO 201", "a7-collaboration","a7-collaboration-andrewmahoneyf")
+} else if(Sys.info()[["user"]] == "sanghawk") {
+  PROJECTDIR <- file.path("Users", "sanghawk", "Documents", "Winter '18", "INFO 201", "a7-collaboration","a7-collaboration-PAJJ")
   fileName <- "sanghawk_results.Rdat"
 } 
+
+testRead <- function() {
+  path <- paste(PROJECTDIR, "/data/UFOCoords.csv", sep="")
+  system.time(ufo_data <- read.csv(path))
+  system.time(ufo_data2 <- fread(path))
+}

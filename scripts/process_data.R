@@ -3,4 +3,4 @@ library(data.table)
 library(dplyr)
 
 ## import static files
-system.time(ufo_data <- fread("data/UFOCoords.csv"))
+system.time(ufo_data <- fread("../data/UFOCoords.csv"))
