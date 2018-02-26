@@ -23,5 +23,5 @@ ufo_map <- ggmap(mapgilbert) +
 ggsave("./img/ufo_map.jpg", ufo_map)
 
 # plots
-ufo_shapes <- ggplot(ufo_data, aes(Shape)) + geom_bar()
+ufo_shapes <- ggplot(ufo_data, aes(Shape)) + geom_bar() + coord_flip()
 ggsave("./img/ufo_shapes.jpg", ufo_shapes)

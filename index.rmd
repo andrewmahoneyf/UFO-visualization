@@ -28,6 +28,8 @@ The first things we were curious about when it came to the UFO sightings data wa
 ufo_map
 
 ```
+*(The data for Hawaii was excluded from the map in the interest of visibility.)*
+
 
 ```{r , echo=FALSE, warning=FALSE}
 
