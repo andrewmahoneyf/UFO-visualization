@@ -1,5 +1,4 @@
-##install.packages(c("dplyr","maps","data.table", "ggmap", "ggplot2","mapdata","maptools"))
-##install.packages("forcats")
+##install.packages(c("dplyr","maps","data.table", "ggmap", "ggplot2","mapdata","maptools", "forcats"))
 library(data.table)
 library(dplyr)
 library(maps)
