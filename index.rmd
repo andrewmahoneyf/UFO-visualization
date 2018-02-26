@@ -1,5 +1,5 @@
 ---
-title: "UFO Sightings"
+title: "A7"
 output:
   html_document: default
 css: styles.css
@@ -18,7 +18,15 @@ knitr::opts_chunk$set(error=TRUE)
                            # continue compiling on error
 ```
 
-##UFO Sightings Map
+##Timing Tests
+
+For our timing tests, we chose to compare the speed of two methods of reading in CSV files: _fread_ and _read.csv_. All four of our group members use Macbooks (OS X operating systems), so our results may not be as varied as a group of testers on different operating systems.
+
+For reference, by _fread_ we mean **fread("{sample.data}.csv")**, and by _read.csv_ we mean **read("{sample.data}.csv")**.
+
+
+
+##UFO Sightings
 
 The first things we were curious about when it came to the UFO sightings data was where they were sighted. To get a better sense of this, we created a map showing each UFO sighting:
 
