@@ -47,6 +47,25 @@ knitr::kable(df, format = "html")
 ```
 
 
+In order to test our computers processing time, we compared the benchmark timings for reading in data as well as filtering datasets. We all have macbooks with relatively similar memory and cpus. If you're interested in the functions we used to test these timings you can click the code button to the right.
+
+```{r}
+
+testRead <- function() {
+  m <- summary(microbenchmark(read.csv("data/UFOCoords.csv"), fread("data/UFOCoords.csv")))
+  return(m)
+}
+testFilter <- function() {
+  df <- fread("data/UFOCoords.csv")
+  m <- summary(microbenchmark(df[match("CANADA", df$Country, nomatch=0),], filter(df, Country == "CANADA"), df %>% filter(Country == "CANADA")))
+  return(m)
+}
+```
+```{r , echo=FALSE}
+df <- fread("data/table_results.csv")
+knitr::kable(df, format = "html")
+```
+
 
 ##UFO Sightings
 
@@ -76,7 +95,4 @@ ufo_shapes
 
 
 The most common shapes were _light_, _circle_, and _triangle_, which is likely due to observers only seeing the UFO for a small amount of time and being unable to discern a more complex shape, such as _teardrop_, _chevron_, etc.. However, there were still a surprisingly high amount of sightings that were reported to be of these complex-shaped UFOs.
-
-
-
 
