@@ -28,8 +28,7 @@ ufo_map <- ggmap(mapgilbert) +
   theme(axis.title = red.text)
 ggsave("./img/ufo_map.jpg", ufo_map)
 
-# plots
-
+# plot UFO shapes in a bar graph sorted by sighting frequency
 ufo_shapes <- ggplot(ufo_data, aes(fct_infreq(Shape))) + geom_bar(fill = "#f93e3e") + 
   labs(x="Shape", y="# of Sightings") + coord_flip() + 
   theme(plot.background = element_rect(fill = "black")) + 
