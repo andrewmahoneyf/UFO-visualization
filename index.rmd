@@ -40,6 +40,12 @@ ufo_map
 *(The data for Hawaii was excluded from the map in the interest of visibility.)*
 
 
+As you can see, the UFO sightings seem to be most highly-concentrated in the Northeastern region of the USA, and are predictably scarce in areas with small human populations.
+
+
+
+Next, we chose to plot the various reported UFO shapes in a bar graph:
+
 ```{r , echo=FALSE, warning=FALSE}
 
 ufo_shapes
@@ -47,4 +53,5 @@ ufo_shapes
 ```
 
 
+The most common shapes were _light_, _circle_, and _triangle_, which is likely due to observers only seeing the UFO for a small amount of time and being unable to discern a more complex shape, such as _teardrop_, _chevron_, etc.. However, there were still a surprisingly high amount of sightings that were reported to be of these complex-shaped UFOs.
 
