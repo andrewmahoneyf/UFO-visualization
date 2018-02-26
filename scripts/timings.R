@@ -1,6 +1,7 @@
 ##install.packages(c("data.table", "dplyr", "microbenchmark"))
 library(data.table)
 library(dplyr)
+library(microbenchmark)
 
 ## Gets the working directory path for a7-collaboration
 ## Using relative path (~/...)
@@ -23,8 +24,17 @@ if(Sys.info()[["user"]] == "jacquesdebar") {
 setwd(PROJECTDIR)
 getwd()
 
+
 testRead <- function() {
-  path <- paste(PROJECTDIR, "/data/UFOCoords.csv", sep="")
-  system.time(ufo_data <- read.csv(path))
-  system.time(ufo_data2 <- fread(path))
+  m <- summary(microbenchmark(read.csv("data/UFOCoords.csv"), fread("data/UFOCoords.csv")))
+  return(m)
 }
+testFilter <- function() {
+  df <- fread("data/UFOCoords.csv")
+  m <- summary(microbenchmark(df[match("CANADA", df$Country, nomatch=0),], filter(df, Country == "CANADA"), df %>% filter(Country == "CANADA")))
+  return(m)
+}
+
+result <- rbind(testRead(), testFilter())
+
+fwrite(result, paste("data/", fileName, sep=""))
