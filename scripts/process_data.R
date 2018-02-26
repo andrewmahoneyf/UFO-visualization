@@ -1,4 +1,5 @@
 ##install.packages(c("dplyr","maps","data.table", "ggmap", "ggplot2","mapdata","maptools"))
+##install.packages("forcats")
 library(data.table)
 library(dplyr)
 library(maps)
@@ -20,6 +21,7 @@ mapgilbert <- get_map(location = c(lon = mean(ufo_data$lng), lat = mean(ufo_data
 # plotting the map with some points on it
 ufo_map <- ggmap(mapgilbert) +
   geom_point(data = ufo_data, aes(x = lng, y = lat, fill = "red", alpha = 0.8), size = 1, shape = 21) +
+  coord_fixed(ratio = 0.925) +
   guides(fill=FALSE, alpha=FALSE, size=FALSE) +
   labs(x="Longitude", y="Latitude") +
   theme(plot.background = element_rect(fill="black")) +
