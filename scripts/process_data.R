@@ -6,6 +6,7 @@ library(ggplot2)
 library(ggmap)
 library(mapdata)
 library(maptools)
+library(forcats)
 
 ## import static files
 ufo_data <- fread("./data/UFOCoords.csv")
@@ -23,5 +24,7 @@ ufo_map <- ggmap(mapgilbert) +
 ggsave("./img/ufo_map.jpg", ufo_map)
 
 # plots
-ufo_shapes <- ggplot(ufo_data, aes(Shape)) + geom_bar() + coord_flip()
+
+white.text <- element_text(face = "bold.italic", color = "#f93e3e")
+ufo_shapes <- ggplot(ufo_data, aes(fct_infreq(Shape))) + geom_bar(fill = "#f93e3e") + labs(x="Shape", y="# of Sightings") + coord_flip() + theme(plot.background = element_rect(fill = "black")) + theme(axis.text.y=element_text(color="white")) + theme(axis.text.x=element_text(colour="white")) + theme(axis.title = white.text)
 ggsave("./img/ufo_shapes.jpg", ufo_shapes)
