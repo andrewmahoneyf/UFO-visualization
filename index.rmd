@@ -28,6 +28,25 @@ For our timing tests, we chose to compare the speed of two methods of reading in
 For reference, by _fread_ we mean **fread("{sample.data}.csv")**, and by _read.csv_ we mean **read("{sample.data}.csv")**.
 
 
+In order to test our computers processing time, we compared the benchmark timings for reading in data as well as filtering datasets. We all have macbooks with relatively similar memory and cpus. If you're interested in the functions we used to test these timings you can click the code button to the right.
+
+```{r}
+
+testRead <- function() {
+  m <- summary(microbenchmark(read.csv("data/UFOCoords.csv"), fread("data/UFOCoords.csv")))
+  return(m)
+}
+testFilter <- function() {
+  df <- fread("data/UFOCoords.csv")
+  m <- summary(microbenchmark(df[match("CANADA", df$Country, nomatch=0),], filter(df, Country == "CANADA"), df %>% filter(Country == "CANADA")))
+  return(m)
+}
+```
+```{r , echo=FALSE}
+df <- fread("data/table_results.csv")
+knitr::kable(df, format = "html")
+```
+
 
 ##UFO Sightings
 
@@ -60,24 +79,6 @@ The most common shapes were _light_, _circle_, and _triangle_, which is likely d
 
 
 
-In order to test our computers processing time, we compared the benchmark timings for reading in data as well as filtering datasets. We all have macbooks with relatively similar memory and cpus. If you're interested in the functions we used to test these timings you can click the code button to the right.
-
-```{r}
-
-testRead <- function() {
-  m <- summary(microbenchmark(read.csv("data/UFOCoords.csv"), fread("data/UFOCoords.csv")))
-  return(m)
-}
-testFilter <- function() {
-  df <- fread("data/UFOCoords.csv")
-  m <- summary(microbenchmark(df[match("CANADA", df$Country, nomatch=0),], filter(df, Country == "CANADA"), df %>% filter(Country == "CANADA")))
-  return(m)
-}
-```
-```{r , echo=FALSE}
-df <- fread("data/table_results.csv")
-knitr::kable(df, format = "html")
-```
 
 
 
