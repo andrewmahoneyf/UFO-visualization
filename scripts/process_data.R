@@ -1,5 +1,4 @@
-##install.packages(c("dplyr","maps","data.table", "ggmap", "ggplot2","mapdata","maptools"))
-##install.packages("forcats")
+##install.packages(c("dplyr","maps","data.table", "ggmap", "ggplot2","mapdata","maptools", "forcats"))
 library(data.table)
 library(dplyr)
 library(maps)
@@ -11,7 +10,7 @@ library(forcats)
 
 ## import static files
 ufo_data <- fread("./data/UFOCoords.csv")
-red.text <- element_text(size=18, face = "bold.italic", color = "#f93e3e")
+red.text <- element_text(size=16, face = "bold.italic", color = "#f93e3e")
 
 # getting the map
 mapgilbert <- get_map(location = c(lon = mean(ufo_data$lng), lat = mean(ufo_data$lat)), zoom = 3,
