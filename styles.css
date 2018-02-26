@@ -1,4 +1,6 @@
-table * img,
-table * embed {
-    height: 100px !important;
+
+body {
+  color:white;
+  background-color:black;
+  font-family: Arial, Helvetica, sans-serif;
 }
