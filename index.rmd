@@ -6,9 +6,9 @@ css: styles.css
 ---
 
 
-```{r init, include=FALSE}
+```{r init, include=FALSE, echo=FALSE}
 ## load API keys
-source("process_data.R")
+source("./scripts/process_data.R")
 ## you may also load necessary libraries and set various options here
 library(dplyr)
 library(data.table)
@@ -22,4 +22,18 @@ knitr::opts_chunk$set(error=TRUE)
 
 The first things we were curious about when it came to the UFO sightings data was where they were sighted. To get a better sense of this, we created a map showing each UFO sighting:
 
-`r ufo_map`
+
+```{r , echo=FALSE, warning=FALSE}
+
+ufo_map
+
+```
+
+```{r , echo=FALSE, warning=FALSE}
+
+ufo_shapes
+
+```
+
+
+
